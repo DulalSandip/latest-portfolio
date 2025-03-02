@@ -12,7 +12,7 @@ import { useState } from "react";
 export const HeroSection = () => {
   const [showForm, setShowForm] = useState(false);
   return (
-    <div className="py-32 md:py-48 lg:py-60 relative z-0 overflow-x-clip">
+    <div className="py-32 md:py-48 lg:py-61 relative z-0 overflow-x-clip">
       <div
         className="absolute inset-0"
         style={{
@@ -151,10 +151,12 @@ export const HeroSection = () => {
                 "linear-gradient(to bottom, transparent, black 0%, black 20%, transparent)",
             }}
           />
+
           <div className="bg-gray-950 border border-gray-800 px-4 py-1.5 inline-flex items-center gap-4 rounded-lg">
             <div className="bg-green-500 size-2.5 rounded-full relative">
               <div className="bg-green-500 size-2.5 rounded-full animate-ping-large absolute"></div>
             </div>
+
             <div className="text-sm font-medium">
               Available for new projects
             </div>
@@ -165,10 +167,17 @@ export const HeroSection = () => {
           <h1 className="font-serif text-3xl md:text-5xl text-center mt-8 tracking-wide">
             Building Scalable Web Apps
           </h1>
-          <p className="mt-4 text-center text-white/60 md:text-base">
-            As a Software Engineer and CTO, I deliver cutting-edge web
-            applications by combining technical expertise with strong
-            leadership. Let&apos;s collaborate on your next project!
+          <p className="mt-4 text-center text-white/60  md:text-base">
+            I&apos;m{" "}
+            <span className="  ">
+              Sandip Dulal,{" "}
+              <span className="uppercase font-semibold tracking-widest bg-gradient-to-r from-emerald-300 to-sky-400 text-transparent bg-clip-text text-center">
+                a Software Engineer and CTO
+              </span>
+            </span>{" "}
+            passionate about building innovative web applications. With
+            technical expertise and strong leadership, I turn ideas into
+            high-performing solutions. Let&apos;s create something amazing!
           </p>
         </div>
 
