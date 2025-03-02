@@ -168,7 +168,7 @@ export const HeroSection = () => {
           <p className="mt-4 text-center text-white/60 md:text-base">
             As a Software Engineer and CTO, I deliver cutting-edge web
             applications by combining technical expertise with strong
-            leadership. Let`&apos;`s collaborate on your next project!
+            leadership. Let&apos;s collaborate on your next project!
           </p>
         </div>
 
