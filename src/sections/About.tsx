@@ -176,7 +176,7 @@ export const AboutSection = () => {
                 {hobbies.map((hobby) => (
                   <motion.div
                     key={hobby.title}
-                    className="inline-flex gap-2 px-6 bg-gradient-to-r from-emerald-300 to-sky-400 rounded-full py-1.5 absolute"
+                    className="inline-flex gap-2 px-6 bg-gradient-to-r from-emerald-300 to-sky-400 rounded-full py-1.5 absolute cursor-pointer group"
                     style={{
                       left: hobby.left,
                       top: hobby.top,
@@ -184,10 +184,20 @@ export const AboutSection = () => {
                     drag
                     dragConstraints={constraintRef}
                   >
+                    {/* Title and Emoji */}
                     <span className="font-medium text-gray-950">
                       {hobby.title}
                     </span>
                     <span>{hobby.emoji}</span>
+
+                    {/* Tooltip Container */}
+                    <div
+                      className="absolute bottom-full invisible left-1/2 z-20 mb-3 -translate-x-1/2 whitespace-nowrap border border-gray-300 rounded-full bg-white py-2 px-4 text-xs text-gray-800 font-medium transition-opacity duration-300 shadow-[0px_12px_30px_-4px_rgba(16,24,40,0.08)] group-hover:opacity-100 group-hover:visible"
+                      role="tooltip"
+                      data-tooltip-target="default-tooltip"
+                    >
+                      Drag to easily move and interact.
+                    </div>
                   </motion.div>
                 ))}
               </div>
