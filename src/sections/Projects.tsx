@@ -8,6 +8,7 @@ import ultimodealMoblandingPage from "@/assets/images/ultimodeal_mobapp.jpg";
 import annapurnaGalleriesLandingPage from "@/assets/images/annapurna galleries.png";
 import aitcHomesLandingPage from "@/assets/images/aitchomes.png";
 import aitcHomesLanding from "@/assets/images/aitchomes_landing.png";
+import circleIllusion from "@/assets/images/circle_illusion.png";
 import Image from "next/image";
 import CheckCircleIcon from "@/assets/icons/check-circle.svg";
 import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
@@ -47,10 +48,25 @@ const portfolioProjects = [
     results: [
       { title: "Lead the project as a CTO" },
       { title: "Timely delivery of Mobile app and Apartment Panel" },
-      { title: "Improved its UI/UX Design according to stakeholder needs." },
+      { title: "Enhanced UI/UX design based on stakeholder requirements." },
     ],
     link: "https://aitchomes.com/",
     image: aitcHomesLanding,
+  },
+
+  {
+    company: "Self Design",
+    year: "2025",
+    title: "Circle Illusion with Canvas and Javascript",
+    results: [
+      { title: "Learned about canvas working process" },
+      {
+        title: "Allow users to adjust position, color, circle, and more ",
+      },
+      { title: "Improved its Design for better appearance." },
+    ],
+    link: "https://circle-illusion.sandipdulal.com.np/",
+    image: circleIllusion,
   },
 ];
 
