@@ -12,7 +12,7 @@ import { useState } from "react";
 export const HeroSection = () => {
   const [showForm, setShowForm] = useState(false);
   return (
-    <div className="py-32 md:py-48 lg:py-61 relative z-0 overflow-x-clip">
+    <div className="py-32 md:py-48 lg:py-60 relative z-0 overflow-x-clip">
       <div
         className="absolute inset-0"
         style={{
@@ -195,7 +195,7 @@ export const HeroSection = () => {
           <button
             onClick={() => setShowForm(true)}
             // onClick={() => console.log("Button clicked!")}
-            className="inline-flex z-10 items-center gap-2 border border-white bg-white text-gray-900 px-6 h-12 rounded-xl"
+            className="inline-flex z-10  items-center gap-2 border border-white bg-white text-gray-900 px-6  h-12 rounded-xl"
           >
             <span>🙌</span>
             <span className="font-semibold">Let&apos;s Connect</span>
