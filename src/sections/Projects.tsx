@@ -9,6 +9,7 @@ import annapurnaGalleriesLandingPage from "@/assets/images/annapurna galleries.p
 import aitcHomesLandingPage from "@/assets/images/aitchomes.png";
 import aitcHomesLanding from "@/assets/images/aitchomes_landing.png";
 import circleIllusion from "@/assets/images/circle_illusion.png";
+import colorConversion from "@/assets/images/color_conversion.png";
 import Image from "next/image";
 import CheckCircleIcon from "@/assets/icons/check-circle.svg";
 import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
@@ -68,12 +69,27 @@ const portfolioProjects = [
     link: "https://circle-illusion.sandipdulal.com.np/",
     image: circleIllusion,
   },
+
+  {
+    company: "Self Design",
+    year: "2025",
+    title: "Color Conversion Tool",
+    results: [
+      { title: "Easily convert hex color codes to HSL and RGB formats" },
+      {
+        title: "Features of color recommendation based on user selection ",
+      },
+      { title: "Improved its design which is build on bootstrap" },
+    ],
+    link: "https://colorconverter.sandipdulal.com.np/",
+    image: colorConversion,
+  },
 ];
 
 export const ProjectsSection = () => {
   return (
     <section id="projects" className=" pb-16 lg:py-24">
-      <div className="container ">
+      <div className=" container ">
         <SectionHeader
           eyebrow=" Real-World Results"
           title=" Featured Projects"
@@ -81,16 +97,19 @@ export const ProjectsSection = () => {
         />
 
         <div className=" md:mt-20 flex flex-col mt-10 gap-20">
+          
           {portfolioProjects.map((project, projectIndex) => (
             // <div
             //   key={project.title}
             //   className="bg-gray-800 rounded-3xl relative z-0 overflow-hidden after:-z-10  after:content-[''] after:absolute after:inset-0 after:bg-red-500"
             // >
+            
             <Card
               key={project.title}
               className=" px-8 pt-8 pb-0 md:pt-12 md:px-10 lg:pt-16 lg:px-20 sticky"
               style={{ top: `${64 + projectIndex * 40}px` }}
             >
+              
               <div className="lg:grid lg:grid-cols-2 lg:gap-16">
                 <div className="lg:pb-16">
                   <div className=" bg-gradient-to-r from-emerald-300 to-sky-400 inline-flex gap-2 font-bold uppercase tracking-widest text-sm text-transparent bg-clip-text">
@@ -102,10 +121,11 @@ export const ProjectsSection = () => {
                     {project.title}
                   </h3>
                   <hr className=" border-t-2 border-white/5 mt-4 md:mt-5" />
+                  
                   <ul className="flex flex-col gap-4 mt-4 md:mt-5">
                     {project.results.map((result) => (
                       <li className=" flex gap-2 text-sm md:text-base text-white/50">
-                        <CheckCircleIcon className=" size-5 md:size-6" />
+                        <CheckCircleIcon className=" size-5 md:size-6 flex-shrink-0  " />
                         <span>{result.title}</span>
                       </li>
                     ))}

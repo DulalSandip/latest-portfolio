@@ -121,7 +121,7 @@ export const AboutSection = () => {
   const constraintRef = useRef(null);
   return (
     <div id="about" className=" py-20 lg:py-28 parallax">
-      <div className="container">
+      <div className="  container ">
         <SectionHeader
           eyebrow="About Me"
           title="A Glimpse Into My World"
@@ -136,7 +136,7 @@ export const AboutSection = () => {
                 description="Explore the books shaping my perspectives."
               />
 
-              <div className="w-40 mx-auto mt-2 md:mt-0">
+              <div className="w-40 mx-auto mt-2 md:mt-0 hover:scale-110 hover:-translate-y-3 transition-transform duration-300">
                 <Image src={bookImage} alt="Book Cover" />
               </div>
             </Card>
