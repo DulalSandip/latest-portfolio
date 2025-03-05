@@ -1,29 +1,42 @@
 "use client";
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 export const Header = () => {
-  const navItems = useMemo(() => ["home", "projects", "about", "contact-us"], []);
+  // Define navItems outside the component
+  const navItems = ["home", "projects", "about", "contact-us"];
 
-  // 🔹 Directly initialize active state from URL to prevent flickering
-  const initialActive = useMemo(() => {
-    const hash = window.location.hash.replace("#", "");
-    return navItems.includes(hash) ? hash : "home";
-  }, [navItems]);
+  // Set initial active state as null
+  const [active, setActive] = useState<string | null>(null);
 
-  const [active, setActive] = useState(initialActive);
+  // Track loading state (prevents render before hash is determined)
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const handleHashChange = () => {
-      const newHash = window.location.hash.replace("#", "");
-      if (navItems.includes(newHash)) {
-        setActive(newHash);
-      }
-    };
+    if (typeof window !== "undefined") {
+      // Initialize the active state based on the URL hash or default to "home"
+      const hash = window.location.hash.replace("#", "") || "home";
+      setActive(hash);
 
-    window.addEventListener("hashchange", handleHashChange);
-    return () => window.removeEventListener("hashchange", handleHashChange);
-  }, [navItems]);
+      // Handle hash changes (when the user clicks on links or URL hash changes)
+      const handleHashChange = () => {
+        const newHash = window.location.hash.replace("#", "");
+        setActive(newHash);
+      };
+
+      // Listen for hash change events
+      window.addEventListener("hashchange", handleHashChange);
+
+      // Turn off loading state once active state is set
+      setIsLoading(false);
+
+      // Cleanup event listener on component unmount
+      return () => window.removeEventListener("hashchange", handleHashChange);
+    }
+  }, []); // Empty dependency array ensures effect runs once
+
+  // Prevent rendering if the state is still loading
+  if (isLoading || active === null) return null;
 
   return (
     <div className="flex justify-center md:px-48 items-center fixed top-3 w-full z-10">
