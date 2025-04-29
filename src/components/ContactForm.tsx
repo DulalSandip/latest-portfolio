@@ -8,6 +8,7 @@ export const ContactForm = ({ onClose }: { onClose?: () => void }) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    country: "",
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -34,6 +35,7 @@ export const ContactForm = ({ onClose }: { onClose?: () => void }) => {
     const emailData = {
       from_name: formData.name,
       from_email: formData.email,
+      user_country: formData.country,
       to_name: toName,
       message: formData.message,
     };
@@ -41,7 +43,7 @@ export const ContactForm = ({ onClose }: { onClose?: () => void }) => {
     try {
       await emailjs.send(serviceId, templateId, emailData, userId);
       setIsSuccess(true); // Show success modal
-      setFormData({ name: "", email: "", message: "" });
+      setFormData({ name: "", email: "", country: "", message: "" });
     } catch (error) {
       console.error("Error sending email:", error);
       setIsSuccess(false); // Show error modal
@@ -93,6 +95,16 @@ export const ContactForm = ({ onClose }: { onClose?: () => void }) => {
             value={formData.email}
             onChange={handleChange}
             placeholder="Your Email"
+            className="p-2 rounded bg-gray-800 text-white border border-gray-700"
+            required
+          />
+
+          <input
+            type="text"
+            name="country"
+            value={formData.country}
+            onChange={handleChange}
+            placeholder="which country you belongs to. eg: Canada"
             className="p-2 rounded bg-gray-800 text-white border border-gray-700"
             required
           />

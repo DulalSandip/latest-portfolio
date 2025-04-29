@@ -30,7 +30,7 @@ export const Header = () => {
       // Turn off loading state once active state is set
       setIsLoading(false);
 
-      // Cleanup event listener on component unmount
+      // Cleanup event listener on component unmount  preventing memory leaks.
       return () => window.removeEventListener("hashchange", handleHashChange);
     }
   }, []); // Empty dependency array ensures effect runs once
