@@ -43,6 +43,25 @@ const nextConfig = {
 
     return config;
   },
+
+  // ✅ Add security headers
+  async headers() {
+    return [
+      {
+        source: "/(.*)",
+        headers: [
+          {
+            key: "X-Frame-Options",
+            value: "SAMEORIGIN", // or 'DENY'
+          },
+          {
+            key: "Content-Security-Policy",
+            value: "frame-ancestors 'self';", // prevents clickjacking
+          },
+        ],
+      },
+    ];
+  },
 };
 
 export default nextConfig;
